@@ -6,9 +6,7 @@ const chaiHttp = require('chai-http');
 const testRequest = require('../../src/router/testRequest');
 chai.use(chaiHttp);
 
-
 // feature testing
-
 
 describe('testRoute', ()=>{
   beforeEach((done) => {
