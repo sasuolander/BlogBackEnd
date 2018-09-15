@@ -1,16 +1,10 @@
-(function() {
-
+/*jslint node: true */
   'use strict';
 
-
   const express = require('express');
-
   const bodyParser = require('body-parser');
-
   const morgan = require('morgan');
-
   const methodOverride = require('method-override');
-
   const app = express();
 
   const PORT = process.env.PORT || 3000;
@@ -23,4 +17,3 @@
   app.use(methodOverride());
 
   module.exports= app;
-}());
