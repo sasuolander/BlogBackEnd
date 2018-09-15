@@ -1,0 +1,49 @@
+/*jslint node: true */
+'use strict';
+
+process.env.NODE_ENV = 'test';
+
+const chai = require('chai');
+const should = chai.should();
+const chaiHttp = require('chai-http');
+const userRequest = require('../../src/router/user');
+chai.use(chaiHttp);
+
+// feature testing
+
+describe('User', ()=>{
+  beforeEach((done) => {
+    done();
+  });
+  afterEach((done) => {
+    done();
+  });
+
+  describe('GET /user',()=>{
+    it('GET', (done) => {
+
+        done();
+    });
+  });
+  describe('GET /users',()=>{
+    it('GET', (done) => {
+        done();
+    });
+  });
+  describe('POST /user',()=>{
+    it('POST', (done) => {
+        done();
+    });    
+});
+describe('PUT /user',()=>{
+    it('PUT', (done) => {
+        done();
+    });    
+});
+describe('DELETE /user',()=>{
+    it('DELETE', (done) => {
+        done();
+    });    
+});
+ 
+});
