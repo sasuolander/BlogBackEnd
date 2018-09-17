@@ -1,10 +1,12 @@
 /*jslint node: true */
   'use strict';
-
+  
   const express = require('express');
   const bodyParser = require('body-parser');
   const morgan = require('morgan');
   const methodOverride = require('method-override');
+  const mongoose = require('mongoose');
+
   const app = express();
 
   const PORT = process.env.PORT || 3000;
@@ -15,5 +17,13 @@
   app.use(bodyParser.json()); // parse application/json
   app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
   app.use(methodOverride());
+
+
+  mongoose.connect();
+
+//This callback will be triggered once the connection is successfully established to MongoDB
+mongoose.connection.on('connected', ()=> {
+  console.log('Mongoose default connection open to ' + config.db);
+});
 
   module.exports= app;
