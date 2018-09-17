@@ -1,17 +1,13 @@
 process.env.NODE_ENV = 'test';
 
 const chai = require('chai');
-
+const expect = chai.expect;
 const chaiHttp = require('chai-http');
-const sinon = require('sinon');
-const userRequest = require('../../src/router/user');
-const userSchema = require('../../src/model/userSchema');
-const should = chai.should();
-chai.use(chaiHttp);
+const postModel = require('../../src/model/postModel');
 
 // feature testing
 
-describe('User', ()=>{
+describe('Post', ()=>{
   beforeEach((done) => {
     done();
   });
@@ -19,34 +15,31 @@ describe('User', ()=>{
     done();
   });
 
-  describe('GET /user/index',()=>{
+  describe('Get a post',()=>{
     it('GET', (done) => {
-        
+        //id in playload
         done();
     });
   });
-  describe('GET /users',()=>{
-    it('should return all Users', (done) => {
-        chai.request(userRequest).get('/user/');
-
+  describe('List of posts',()=>{
+    it('GET', (done) => {
         done();
-
+    });
     it("should return error pages",(done)=>{
 
         done();
     });
-    });
   });
-  describe('POST /user',()=>{
+  describe('Save post',()=>{
     it('POST', (done) => {
         done();
-    });
+    }); 
     it("should return error pages",(done)=>{
 
         done();
-    });    
+    });   
 });
-describe('PUT /user',()=>{
+describe('Update post',()=>{
     it('PUT', (done) => {
         done();
     });
@@ -55,14 +48,14 @@ describe('PUT /user',()=>{
         done();
     });    
 });
-describe('DELETE /user',()=>{
+describe('Delete post',()=>{
     it('DELETE', (done) => {
         done();
-    }); 
+    });
     it("should return error pages",(done)=>{
 
         done();
-    });   
+    });    
 });
  
 });

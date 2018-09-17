@@ -3,7 +3,8 @@
     "env": { "es6": true,
         "mocha": true,
         "mongo": true,
-        "node":true
+        "node":true,
+        "chai":true
     }, 
     "linebreak-style": [
         "off"
