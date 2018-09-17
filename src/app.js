@@ -19,7 +19,7 @@
   app.use(methodOverride());
 
 
-  mongoose.connect();
+  mongoose.connect(config.db);
 
 //This callback will be triggered once the connection is successfully established to MongoDB
 mongoose.connection.on('connected', ()=> {
