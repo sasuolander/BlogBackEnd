@@ -17,7 +17,7 @@ describe('User', ()=>{
     done();
   });
 
-  describe('GET /user',()=>{
+  describe('GET /post',()=>{
     it('GET', (done) => {
         //id in playload
         done();
@@ -28,19 +28,35 @@ describe('User', ()=>{
         chai.request(userRequest).get('/post/');
         done();
     });
+    it("should return error pages",(done)=>{
+
+        done();
+    });
   });
   describe('POST /post',()=>{
     it('POST', (done) => {
         done();
-    });    
+    }); 
+    it("should return error pages",(done)=>{
+
+        done();
+    });   
 });
 describe('PUT /post',()=>{
     it('PUT', (done) => {
+        done();
+    });
+    it("should return error pages",(done)=>{
+
         done();
     });    
 });
 describe('DELETE /post/id',()=>{
     it('DELETE', (done) => {
+        done();
+    });
+    it("should return error pages",(done)=>{
+
         done();
     });    
 });
