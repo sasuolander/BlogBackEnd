@@ -41,18 +41,35 @@ describe('User', ()=>{
         usersMock.expects('find').yields(expectedResult,null);
         userModel.find((err,result)=>{
             usersMock.verify(); usersMock.restore();
-            expect(result.status).to.not.be.true;
+            expect(err.status).to.not.be.true;
             done();
         });
     });
   });
   describe('Save user',()=>{
-        it('POST', (done) => {
-            done();
+        it('Saving user', (done) => {
+            const userMock = sinon.mock(new userModel ({ user: 'Save new user from mock'}));
+            const userObject = userMock.object;
+            const expectedResult = { status: true };
+            userMock.expects('save').yields(null, expectedResult);
+            userObject.save( (err, result)=> {
+                userMock.verify();
+                userMock.restore();
+                expect(result.status).to.be.true;
+                done();
+            });
         });
         it("should return error pages",(done)=>{
-
-            done();
+            const userMock = sinon.mock(new userModel({ user: 'Save new user from mock'}));
+            const userObject = userMock.object;
+            const expectedResult = { status: false };
+            userMock.expects('save').yields(expectedResult, null);
+            userObject.save( (err, result)=> {
+                userMock.verify();
+                userMock.restore();
+                expect(err.status).to.not.be.true;
+                done();
+            });
         });    
     });
     describe('Update user',()=>{
