@@ -1,61 +1,96 @@
-process.env.NODE_ENV = 'test';
+ process.env.NODE_ENV = 'test';
 
 const chai = require('chai');
+const chai_http = require('chai-http');
+const request= require("supertest");
 const expect = chai.expect;
-const chaiHttp = require('chai-http');
-const postModel = require('../../src/model/postModel');
+const {app,startServer,stopServer} = require('../../src/app');
+
+
+chai.use(chai_http);
 
 // feature testing
 
 describe('Post', ()=>{
-  beforeEach((done) => {
+   /* before(
+         function(){
+            return startServer;
+        } 
+    );
+
+    after(
+         function(){
+            return stopServer;
+        } 
+    );
+   beforeEach((done) => {
+      
+      
     done();
-  });
-  afterEach((done) => {
+  }); 
+   afterEach((done) => {
+      //reset database
+      
     done();
-  });
+  }); */
 
   describe('Get a post',()=>{
-    it('GET', (done) => {
+    it('GET', function(done){
         //id in playload
-        done();
+        request(app).get("/post")
+            .end(function(err, res) {
+            expect(res.statusCode).to.equal(200);
+            expect(res.type).to.be.an('application/json');
+            done();
+        });
     });
-  });
-  describe('List of posts',()=>{
+});
+
+  /*  it("should return error pages",(done)=>{
+        //return chai.request(app).get
+    done();y
+    }); */
+
+/*   describe('List of posts',()=>{
     it('GET', (done) => {
-        done();
+        
+        //return chai.request(app).get
+
+
     });
     it("should return error pages",(done)=>{
-
-        done();
+        //return chai.request(app).get
+    
     });
   });
   describe('Save post',()=>{
     it('POST', (done) => {
-        done();
+        //return chai.request(app).post
     }); 
     it("should return error pages",(done)=>{
-
-        done();
+        //return chai.request(app).get
+        
     });   
 });
-describe('Update post',()=>{
+  describe('Update post',()=>{
     it('PUT', (done) => {
-        done();
+        //return chai.request(app).put
     });
     it("should return error pages",(done)=>{
 
-        done();
+        //return chai.request(app).get
     });    
 });
-describe('Delete post',()=>{
+  describe('Delete post',()=>{
     it('DELETE', (done) => {
-        done();
+
+       // return chai.request(app).del
     });
     it("should return error pages",(done)=>{
 
-        done();
+        //return chai.request(app).get
+        done()
     });    
-});
+}); */
  
 });

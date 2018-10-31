@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'test';
+/* process.env.NODE_ENV = 'test';
 
 const chai = require('chai');
 const expect = chai.expect;
@@ -8,12 +8,6 @@ const postModel = require('../../src/model/postModel');
 // feature testing
 
 describe('Post', ()=>{
-  beforeEach((done) => {
-    done();
-  });
-  afterEach((done) => {
-    done();
-  });
 
   describe('Get a post',()=>{
     it('GET', (done) => {
@@ -59,3 +53,4 @@ describe('Delete post',()=>{
 });
  
 });
+ */

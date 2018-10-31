@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./src/app.js ",
-    "test": "node ./node_modules/mocha/bin/_mocha"
+    "test": "node ./node_modules/mocha/bin/_mocha",
+    "test2": "node"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -36,6 +37,7 @@
     "run-sequence": "^2.2.1",
     "sinon": "^6.3.3",
     "sinon-mongoose": "^2.2.1",
+    "supertest": "^3.3.0",
     "tiny-lr": "^1.1.1"
   }
 }

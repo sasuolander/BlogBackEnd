@@ -1,12 +1,13 @@
 {
+    "linebreak-style": [
+        "off"
+      ],
     "extends": "google",
     "env": { "es6": true,
         "mocha": true,
         "mongo": true,
         "node":true,
         "chai":true
-    }, 
-    "linebreak-style": [
-        "off"
-      ]
+    } 
+    
 }
