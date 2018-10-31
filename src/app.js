@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const user = require('./router/user');
 const writingPost = require('./router/writingPost');
 //express
 const app = express();
@@ -24,6 +25,7 @@ app.use(bodyParser.json({
 app.use(methodOverride());
 
 //router
+app.use('/user',user);
 app.use('/post', writingPost);
 
 //This callback will be triggered once the connection is successfully established to MongoDB
