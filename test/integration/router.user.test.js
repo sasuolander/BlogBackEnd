@@ -4,6 +4,7 @@ const chai = require('chai');
 const sinon = require('sinon');
 const userRequest = require('../../src/router/user');
 const userModel = require('../../src/model/userModel');
+const mongoose = require("mongoose");
 const expect = chai.expect;
 
 // feature testing

@@ -25,7 +25,7 @@ app.use(bodyParser.json({
 app.use(methodOverride());
 
 //router
-app.use('/user',user);
+app.use('/user', user);
 app.use('/post', writingPost);
 
 //This callback will be triggered once the connection is successfully established to MongoDB
@@ -33,7 +33,7 @@ mongoose.connection.on('connected', () => {
   console.log('Mongoose default connection open to ' + config.db);
 });
 
-function runServer  () {
+function runServer() {
   const PORT = process.env.PORT || port;
 
   return new Promise((resolve, reject) => {
@@ -47,7 +47,7 @@ function runServer  () {
   });
 };
 
-function stopServer(){
+function stopServer() {
   return new Promise((resolve, reject) => {
     console.log('Seerver stopped');
     server.close((err) => {
